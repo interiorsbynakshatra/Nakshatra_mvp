@@ -199,7 +199,7 @@ const GetQuote = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">
-                      Free 3D Designs
+                      3D Design Visualization
                     </h3>
                     <p className="text-gray-600 text-sm">
                       Visualize your home before execution with detailed 3D renderings included in your quote.

@@ -120,7 +120,7 @@ const Home = () => {
 
   const usps = [
     { icon: Clock, text: 'On-time delivery guaranteed' },
-    { icon: Palette, text: '3D design before execution' },
+    { icon: Palette, text: '3D visualization & design' },
     { icon: Award, text: 'Budget transparency' },
     { icon: Users, text: 'In-house skilled team' },
     { icon: CheckCircle, text: 'Strong post-handover support' },
@@ -139,22 +139,23 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Content */}
             <div className="space-y-6 animate-fadeIn">
-              <div className="inline-flex items-center space-x-2 bg-white border border-[#047C74]/20 rounded-full px-4 py-2 shadow-sm">
-                <Star className="w-4 h-4 text-[#C68D28]" />
-                <span className="text-sm text-gray-700">
+              <div className="inline-flex items-center space-x-2 bg-[#047C74] text-white rounded-full px-5 py-2.5 shadow-lg">
+                <Star className="w-5 h-5 text-[#C68D28] fill-[#C68D28]" />
+                <span className="text-sm font-semibold">
                   4+ years | 50+ homes transformed
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                End-to-end home interiors for{' '}
-                <span className="text-[#047C74]">first-time homeowners</span> in
-                Pune
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                Transform Your Space Into a{' '}
+                <span className="text-[#047C74] relative">
+                  Dream Home
+                  <span className="absolute bottom-0 left-0 w-full h-2 bg-[#E7D49E] -z-10"></span>
+                </span>
               </h1>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                Full home interiors for 1, 2 and 3 BHK homes with transparent
-                pricing, 3D design, and friendly post-handover support.
+                Complete interior solutions for 1, 2 and 3 BHK homes in Pune with transparent pricing, expert design, and exceptional post-handover support.
               </p>
 
               {/* Stats */}
@@ -281,7 +282,7 @@ const Home = () => {
                 )}
 
                 <div className="relative">
-                  <div className="text-6xl font-bold text-[#047C74]/10 mb-2">
+                  <div className="text-7xl font-extrabold text-[#047C74]/30 mb-2" style={{ fontFamily: "'Poppins', sans-serif" }}>
                     {step.step}
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -311,9 +312,12 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {portfolio.map((project, index) => (
-              <div
+              <a
                 key={index}
-                className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                href={project.image}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
               >
                 <div className="aspect-w-4 aspect-h-3 overflow-hidden">
                   <img
@@ -332,7 +336,7 @@ const Home = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>

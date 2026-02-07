@@ -83,7 +83,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'We Serve',
-      details: ['Pune, Mumbai, Dhule & Nashik'],
+      details: ['PAN Maharashtra'],
       action: null
     }
   ];

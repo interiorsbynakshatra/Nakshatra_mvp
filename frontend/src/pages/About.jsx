@@ -27,6 +27,11 @@ const About = () => {
       icon: Handshake,
       title: 'Collaboration',
       description: 'Working closely with clients to understand their vision and bring their dream spaces to life.'
+    },
+    {
+      icon: Users,
+      title: 'Perfection',
+      description: 'Meticulous attention to every detail, ensuring flawless execution and exceeding expectations every time.'
     }
   ];
 
