@@ -93,7 +93,7 @@ yarn install && yarn build
 
 **Start Command:**
 ```bash
-yarn start
+yarn serve
 ```
 
 **Instance Type:**
@@ -107,7 +107,7 @@ Click "Add Environment Variable" and add:
 
 **Variable 1:**
 - **Key:** `NODE_VERSION`
-- **Value:** `18.18.0`
+- **Value:** `20.18.0`
 
 **Variable 2:**
 - **Key:** `REACT_APP_BACKEND_URL`
