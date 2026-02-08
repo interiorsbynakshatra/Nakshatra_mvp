@@ -14,6 +14,8 @@ import {
   MessageCircle,
   Star
 } from 'lucide-react';
+import GoogleReviews from '../components/GoogleReviews';
+import InstagramFeed from '../components/InstagramFeed';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -432,6 +434,12 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Google Reviews Section */}
+      <GoogleReviews />
+
+      {/* Instagram Feed Section */}
+      <InstagramFeed />
     </div>
   );
 };
