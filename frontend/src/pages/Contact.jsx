@@ -113,14 +113,7 @@ const Contact = () => {
     }
   };
 
-  const handleWhatsAppClick = () => {
-    const phoneNumber = '918999100590';
-    const message = encodeURIComponent(
-      `Hi Nakshatra Interiors, I'd like to get in touch regarding interior design services.`
-    );
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(whatsappUrl, '_blank');
-  };
+  const whatsappUrl = getWhatsAppUrl("Hi Nakshatra Interiors, I'd like to get in touch regarding interior design services.");
 
   const contactInfo = [
     {
