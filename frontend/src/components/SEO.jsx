@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 // SEO Configuration for Nakshatra Interiors
 const seoConfig = {
   siteName: 'Nakshatra Interiors',
-  siteUrl: 'https://nakshtrainterior.com',
+  siteUrl: 'https://nakshatrainterior.com',
   defaultTitle: 'Nakshatra Interiors | Best Interior Designers in Pune',
   defaultDescription: 'Transform your home with Nakshatra Interiors - Pune\'s leading interior design company. Specializing in 1BHK, 2BHK, 3BHK interiors, modular kitchens, and complete home solutions. 50+ projects completed. Get free consultation!',
   defaultKeywords: 'interior designer pune, home interior pune, modular kitchen pune, 2bhk interior design, 3bhk interior design, interior design company pune, best interior designer pune, affordable interior design pune, home decor pune, wardrobe design pune, false ceiling pune, interior designer pimpri chinchwad, interior designer nashik, interior designer dhule, nakshatra interiors',

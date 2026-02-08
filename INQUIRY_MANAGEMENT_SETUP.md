@@ -122,7 +122,7 @@ Add to form data:
   _subject: 'New Inquiry from Website',
   _template: 'table',
   _autoresponse: 'Thank you for contacting Nakshatra Interiors!',
-  _next: 'https://nakshtrainterior.com/thank-you'
+  _next: 'https://nakshatrainterior.com/thank-you'
 }
 ```
 
