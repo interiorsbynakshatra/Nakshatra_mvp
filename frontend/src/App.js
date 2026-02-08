@@ -12,6 +12,8 @@ import ProjectDetail from './pages/ProjectDetail';
 import GetQuote from './pages/GetQuote';
 import Testimonials from './pages/Testimonials';
 import Contact from './pages/Contact';
+import FAQ from './pages/FAQ';
+import CostCalculator from './pages/CostCalculator';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           <Route path="/get-quote" element={<GetQuote />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/cost-calculator" element={<CostCalculator />} />
         </Routes>
         <Footer />
       </BrowserRouter>
