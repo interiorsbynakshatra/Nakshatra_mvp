@@ -69,13 +69,13 @@ git push -u origin main
 3. Sign up using your **GitHub account** (recommended)
 4. This will connect Render to your GitHub
 
-### **Step 2: Create a New Web Service**
+### **Step 2: Create a New Static Site**
 
 1. Click "New +" button (top right)
-2. Select "Web Service"
+2. Select **"Static Site"** (NOT Web Service)
 3. Click "Connect" next to your `nakshatra-interiors-website` repository
 
-### **Step 3: Configure Your Web Service**
+### **Step 3: Configure Your Static Site**
 
 Fill in these details:
 
@@ -84,20 +84,10 @@ Fill in these details:
 - **Region:** Choose closest to India (Singapore recommended)
 - **Branch:** `main`
 - **Root Directory:** `frontend`
-- **Runtime:** `Node`
 
-**Build Command:**
-```bash
-yarn install && yarn build
-```
-
-**Start Command:**
-```bash
-yarn start
-```
-
-**Instance Type:**
-- Select "Free" (this gives you free hosting!)
+**Build Settings:**
+- **Build Command:** `yarn install && yarn build`
+- **Publish Directory:** `build`
 
 ### **Step 4: Add Environment Variables**
 
@@ -107,18 +97,20 @@ Click "Add Environment Variable" and add:
 
 **Variable 1:**
 - **Key:** `NODE_VERSION`
-- **Value:** `18.18.0`
-
-**Variable 2:**
-- **Key:** `REACT_APP_BACKEND_URL`
-- **Value:** (Leave empty for now, or use your backend URL if you have one)
+- **Value:** `20.18.0`
 
 ### **Step 5: Deploy!**
 
 1. Scroll to bottom
-2. Click "Create Web Service"
+2. Click "Create Static Site"
 3. Wait 5-10 minutes for deployment
 4. Your website will be live at: `https://nakshatra-interiors.onrender.com`
+
+**✅ Benefits of Static Site:**
+- Free forever (no spin-down!)
+- Faster loading
+- Global CDN
+- Automatic HTTPS
 
 ---
 
