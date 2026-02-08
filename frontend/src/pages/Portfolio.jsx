@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { MapPin, Home, Calendar, ArrowRight } from 'lucide-react';
+import { MapPin, Home, Calendar, ArrowRight, Play } from 'lucide-react';
 import { projects } from '../data/mockProjects';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 
