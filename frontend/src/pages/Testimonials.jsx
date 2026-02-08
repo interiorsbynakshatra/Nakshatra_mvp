@@ -55,14 +55,7 @@ const Testimonials = () => {
     }
   ];
 
-  const handleWhatsAppClick = () => {
-    const phoneNumber = '918999100590';
-    const message = encodeURIComponent(
-      "Hi Nakshatra Interiors, I'd like to discuss my interior design project after seeing your testimonials."
-    );
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(whatsappUrl, '_blank');
-  };
+  const whatsappUrl = getWhatsAppUrl("Hi Nakshatra Interiors, I'd like to discuss my interior design project after seeing your testimonials.");
 
   return (
     <div className="min-h-screen">
