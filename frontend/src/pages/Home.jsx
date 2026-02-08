@@ -17,9 +17,11 @@ import {
 import GoogleReviews from '../components/GoogleReviews';
 import InstagramFeed from '../components/InstagramFeed';
 import SEO, { pageSEO } from '../components/SEO';
+import { useConsultation } from '../context/ConsultationContext';
 
 const Home = () => {
   const navigate = useNavigate();
+  const { openConsultationPopup } = useConsultation();
 
   const handleWhatsAppClick = () => {
     const phoneNumber = '918999100590';
@@ -36,6 +38,10 @@ const Home = () => {
 
   const handleProjectClick = (projectId) => {
     navigate(`/portfolio/${projectId}`);
+  };
+
+  const handleBookConsultation = () => {
+    openConsultationPopup('home-button');
   };
 
   const services = [
