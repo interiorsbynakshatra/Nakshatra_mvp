@@ -1,6 +1,7 @@
 import React from 'react';
 import { Users, Target, Heart, Lightbulb, Handshake, TrendingUp } from 'lucide-react';
 import SEO, { pageSEO } from '../components/SEO';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
 const About = () => {
   const values = [
