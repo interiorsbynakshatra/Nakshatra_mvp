@@ -257,18 +257,14 @@ const ProjectDetail = () => {
           <p className="text-xl text-gray-600 mb-8">
             Let's create something similar for your home
           </p>
-          <button
-            onClick={() => {
-              const phoneNumber = '918999100590';
-              const message = encodeURIComponent(
-                `Hi Nakshatra Interiors, I loved the ${project.title} project. I'd like to discuss a similar design for my home.`
-              );
-              window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-            }}
-            className="bg-[#047C74] hover:bg-[#036860] text-white px-8 py-4 rounded-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+          <a
+            href={getWhatsAppUrl(`Hi Nakshatra Interiors, I loved the ${project.title} project. I'd like to discuss a similar design for my home.`)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#047C74] hover:bg-[#036860] text-white px-8 py-4 rounded-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 inline-block"
           >
             Start Your Project
-          </button>
+          </a>
         </div>
       </section>
 
