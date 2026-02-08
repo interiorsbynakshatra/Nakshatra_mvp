@@ -172,6 +172,11 @@ export const projects = [
       'https://images.unsplash.com/photo-1600607687644-c7171b42498b?crop=entropy&cs=srgb&fm=jpg&q=85',
       'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?crop=entropy&cs=srgb&fm=jpg&q=85'
     ],
-    videos: []
+    videos: [
+      { type: 'youtube', url: 'https://www.youtube.com/watch?v=gxF9xV1Aeng', title: 'Living Space Design Tour' }
+    ],
+    beforeImage: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800',
+    afterImage: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800'
+  }
   }
 ];
