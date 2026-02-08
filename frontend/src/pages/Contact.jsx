@@ -85,7 +85,7 @@ const Contact = () => {
           _template: 'table',
           _captcha: false,
           _cc: '',
-          _autoresponse: `Dear ${formData.name.trim()},\n\nThank you for contacting Nakshatra Interiors!\n\nWe have received your inquiry and our team will get back to you within 24 hours with design ideas and cost estimates.\n\nYour Details:\nName: ${formData.name.trim()}\nPhone: ${phoneDigits}\nCity: ${formData.city.trim()}\n\nIn the meantime, feel free to:\n• Browse our portfolio: nakshtrainterior.com/portfolio\n• Use our cost calculator: nakshtrainterior.com/cost-calculator\n• Check our FAQ: nakshtrainterior.com/faq\n• Chat with us: wa.me/918999100590\n\nBest regards,\nNakshatra Interiors Team\n"Adding aesthetics to life"\n\n📱 +91 8999100590 | +91 7709596817\n📧 interiorsbynakshatra@gmail.com\n🌐 nakshtrainterior.com\n📍 Serving PAN Maharashtra`
+          _autoresponse: `Dear ${formData.name.trim()},\n\nThank you for contacting Nakshatra Interiors!\n\nWe have received your inquiry and our team will get back to you within 24 hours with design ideas and cost estimates.\n\nYour Details:\nName: ${formData.name.trim()}\nPhone: ${phoneDigits}\nCity: ${formData.city.trim()}\n\nIn the meantime, feel free to:\n• Browse our portfolio: nakshatrainterior.com/portfolio\n• Use our cost calculator: nakshatrainterior.com/cost-calculator\n• Check our FAQ: nakshatrainterior.com/faq\n• Chat with us: wa.me/918999100590\n\nBest regards,\nNakshatra Interiors Team\n"Adding aesthetics to life"\n\n📱 +91 8999100590 | +91 7709596817\n📧 interiorsbynakshatra@gmail.com\n🌐 nakshatrainterior.com\n📍 Serving PAN Maharashtra`
         })
       });
 
@@ -148,7 +148,7 @@ const Contact = () => {
         title={pageSEO.contact.title}
         description={pageSEO.contact.description}
         keywords={pageSEO.contact.keywords}
-        canonicalUrl="https://nakshtrainterior.com/contact"
+        canonicalUrl="https://nakshatrainterior.com/contact"
       />
       
       {/* Hero Section */}

@@ -65,7 +65,7 @@ const CostCalculator = () => {
         title={pageSEO.costCalculator.title}
         description={pageSEO.costCalculator.description}
         keywords={pageSEO.costCalculator.keywords}
-        canonicalUrl="https://nakshtrainterior.com/cost-calculator"
+        canonicalUrl="https://nakshatrainterior.com/cost-calculator"
       />
       
       {/* Hero Section */}

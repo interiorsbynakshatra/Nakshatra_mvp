@@ -59,7 +59,7 @@ const FAQ = () => {
         title={pageSEO.faq.title}
         description={pageSEO.faq.description}
         keywords={pageSEO.faq.keywords}
-        canonicalUrl="https://nakshtrainterior.com/faq"
+        canonicalUrl="https://nakshatrainterior.com/faq"
       />
       
       {/* Hero Section */}

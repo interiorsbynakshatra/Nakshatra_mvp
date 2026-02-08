@@ -56,7 +56,7 @@ const GetQuote = () => {
         title={pageSEO.getQuote.title}
         description={pageSEO.getQuote.description}
         keywords={pageSEO.getQuote.keywords}
-        canonicalUrl="https://nakshtrainterior.com/get-quote"
+        canonicalUrl="https://nakshatrainterior.com/get-quote"
       />
       
       {/* Hero Section */}

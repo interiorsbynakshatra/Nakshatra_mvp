@@ -43,7 +43,7 @@ const About = () => {
         title={pageSEO.about.title}
         description={pageSEO.about.description}
         keywords={pageSEO.about.keywords}
-        canonicalUrl="https://nakshtrainterior.com/about"
+        canonicalUrl="https://nakshatrainterior.com/about"
       />
       
       {/* Hero Section */}

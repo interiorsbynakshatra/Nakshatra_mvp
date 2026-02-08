@@ -98,7 +98,7 @@ const ProjectDetail = () => {
         title={`${project.title} | Interior Design Project | Nakshatra Interiors`}
         description={`${project.description} ${project.type} interior design project in ${project.location}. Budget: ${project.budget}. View photos, videos, and before/after transformation.`}
         keywords={`${project.type} interior design ${project.location}, home interior ${project.location.split(',')[0].toLowerCase()}, ${project.type} flat interior pune, modular kitchen ${project.location.split(',')[0].toLowerCase()}`}
-        canonicalUrl={`https://nakshtrainterior.com/portfolio/${project.id}`}
+        canonicalUrl={`https://nakshatrainterior.com/portfolio/${project.id}`}
         ogImage={project.thumbnailImage}
       />
       

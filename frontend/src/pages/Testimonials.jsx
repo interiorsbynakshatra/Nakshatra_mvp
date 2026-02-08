@@ -63,7 +63,7 @@ const Testimonials = () => {
         title={pageSEO.testimonials.title}
         description={pageSEO.testimonials.description}
         keywords={pageSEO.testimonials.keywords}
-        canonicalUrl="https://nakshtrainterior.com/testimonials"
+        canonicalUrl="https://nakshatrainterior.com/testimonials"
       />
       
       {/* Hero Section */}

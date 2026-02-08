@@ -25,7 +25,7 @@ const Portfolio = () => {
         title={pageSEO.portfolio.title}
         description={pageSEO.portfolio.description}
         keywords={pageSEO.portfolio.keywords}
-        canonicalUrl="https://nakshtrainterior.com/portfolio"
+        canonicalUrl="https://nakshatrainterior.com/portfolio"
       />
       
       {/* Hero Section */}

@@ -117,7 +117,7 @@ const ConsultationPopup = () => {
           _subject: '📅 URGENT: Free Consultation Request - Nakshatra Interiors',
           _template: 'table',
           _captcha: false,
-          _autoresponse: `Dear ${formData.name.trim()},\n\nThank you for requesting a free consultation with Nakshatra Interiors!\n\nOur design team will contact you at ${phoneDigits} within 24 hours to schedule your personalized consultation.\n\nYour Requirement: ${formData.requirement.trim() || 'Not specified'}\n\nDuring the consultation, we will:\n• Understand your home requirements\n• Show you our completed projects\n• Discuss design ideas and styles\n• Provide accurate cost estimates\n• Answer all your questions\n\nFor immediate assistance:\n📱 WhatsApp: +91 8999100590\n📧 Email: interiorsbynakshatra@gmail.com\n🌐 Website: nakshtrainterior.com\n\nBest regards,\nNakshatra Interiors Team\n"Adding aesthetics to life"`
+          _autoresponse: `Dear ${formData.name.trim()},\n\nThank you for requesting a free consultation with Nakshatra Interiors!\n\nOur design team will contact you at ${phoneDigits} within 24 hours to schedule your personalized consultation.\n\nYour Requirement: ${formData.requirement.trim() || 'Not specified'}\n\nDuring the consultation, we will:\n• Understand your home requirements\n• Show you our completed projects\n• Discuss design ideas and styles\n• Provide accurate cost estimates\n• Answer all your questions\n\nFor immediate assistance:\n📱 WhatsApp: +91 8999100590\n📧 Email: interiorsbynakshatra@gmail.com\n🌐 Website: nakshatrainterior.com\n\nBest regards,\nNakshatra Interiors Team\n"Adding aesthetics to life"`
         })
       });
 

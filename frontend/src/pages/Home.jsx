@@ -146,7 +146,7 @@ const Home = () => {
         title={pageSEO.home.title}
         description={pageSEO.home.description}
         keywords={pageSEO.home.keywords}
-        canonicalUrl="https://nakshtrainterior.com/"
+        canonicalUrl="https://nakshatrainterior.com/"
       />
       
       {/* Hero Section */}
