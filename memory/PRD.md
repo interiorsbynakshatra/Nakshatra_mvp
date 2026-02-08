@@ -170,9 +170,57 @@ Build a modern, mobile-first marketing website for Nakshatra Interiors, an inter
 5. ⏭️ Performance testing and optimization
 6. ⏭️ Deploy to nakshtrainterior.com domain
 
-## Notes
-- No backend required - all lead capture via WhatsApp and Google Forms
-- Design follows brand guidelines strictly
-- Mobile-first approach ensures great mobile experience
-- All images are placeholders - owner needs to replace with actual project photos
-- Testimonials are sample data - owner needs to add real client reviews
+## Latest Updates
+
+### Date: February 8, 2026
+
+#### Video Support in Portfolio ✅
+- **Added full video support** to portfolio system
+- Supports **YouTube**, **Vimeo**, and **direct video files**
+- Videos displayed below image gallery on project detail pages
+- "Video" badge shown on portfolio cards for projects with videos
+- Updated documentation (`HOW_TO_ADD_PHOTOS.md`) with video instructions
+
+#### Files Modified
+- `/app/frontend/src/data/mockProjects.js` - Updated data structure for videos
+- `/app/frontend/src/pages/ProjectDetail.jsx` - Added VideoPlayer component with YouTube/Vimeo embed support
+- `/app/frontend/src/pages/Portfolio.jsx` - Added Video badge indicator on project cards
+- `/app/HOW_TO_ADD_PHOTOS.md` - Added comprehensive video instructions
+
+#### Video Data Structure
+```javascript
+videos: [
+  { type: 'youtube', url: 'https://www.youtube.com/watch?v=VIDEO_ID', title: 'Video Title' },
+  { type: 'vimeo', url: 'https://vimeo.com/VIDEO_ID', title: 'Video Title' },
+  { type: 'direct', url: 'https://your-server.com/video.mp4', title: 'Video Title' }
+]
+```
+
+### Previously Completed Features
+- Portfolio system with dedicated project pages
+- Before/After image slider
+- Cost Calculator page
+- FAQ page
+- Form validation (name, email, phone)
+- FormSubmit.io integration for inquiries
+- Google Reviews section (static)
+- Instagram feed widget (static)
+- WhatsApp floating button
+- SEO optimization guide created
+
+## Remaining Tasks
+
+### P0 - Critical
+- [ ] User to verify form validation works correctly
+- [ ] User to replace demo YouTube videos with actual project walkthroughs
+- [ ] User to configure FormSubmit.io email address
+
+### P1 - High Priority
+- [ ] Implement on-page SEO (react-helmet for meta tags)
+- [ ] Add real project photos and videos to portfolio
+
+### P2 - Future Enhancements
+- [ ] Custom backend for inquiry storage (replace FormSubmit.io)
+- [ ] Live Google Reviews integration
+- [ ] Live Instagram feed widget
+- [ ] Analytics integration (GA4)
