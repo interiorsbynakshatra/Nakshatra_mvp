@@ -69,10 +69,16 @@ const Portfolio = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="inline-block bg-[#047C74] text-white text-xs font-semibold px-3 py-1 rounded-full mb-2">
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                    <div className="inline-block bg-[#047C74] text-white text-xs font-semibold px-3 py-1 rounded-full">
                       {project.type}
                     </div>
+                    {project.videos && project.videos.length > 0 && (
+                      <div className="flex items-center bg-white/90 text-gray-800 text-xs font-semibold px-2 py-1 rounded-full">
+                        <Play className="w-3 h-3 mr-1 fill-current" />
+                        Video
+                      </div>
+                    )}
                   </div>
                 </div>
 
