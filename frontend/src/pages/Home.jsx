@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import GoogleReviews from '../components/GoogleReviews';
 import InstagramFeed from '../components/InstagramFeed';
+import SEO, { pageSEO } from '../components/SEO';
 
 const Home = () => {
   const navigate = useNavigate();
