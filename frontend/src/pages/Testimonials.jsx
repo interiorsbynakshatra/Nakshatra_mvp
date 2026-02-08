@@ -188,13 +188,15 @@ const Testimonials = () => {
             Experience the same quality, care, and creativity that our clients rave about
           </p>
 
-          <button
-            onClick={handleWhatsAppClick}
-            className="bg-white text-[#047C74] hover:bg-gray-100 px-8 py-4 rounded-lg font-medium flex items-center justify-center space-x-2 mx-auto shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-[#047C74] hover:bg-gray-100 px-8 py-4 rounded-lg font-medium inline-flex items-center justify-center space-x-2 mx-auto shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
           >
             <MessageCircle className="w-5 h-5" />
             <span>Start Your Journey Today</span>
-          </button>
+          </a>
         </div>
       </section>
     </div>
