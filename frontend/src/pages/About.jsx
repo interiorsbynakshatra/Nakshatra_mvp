@@ -38,6 +38,13 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title={pageSEO.about.title}
+        description={pageSEO.about.description}
+        keywords={pageSEO.about.keywords}
+        canonicalUrl="https://nakshtrainterior.com/about"
+      />
+      
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 bg-gradient-to-b from-[#E7D49E]/20 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
