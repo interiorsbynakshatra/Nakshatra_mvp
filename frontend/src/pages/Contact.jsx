@@ -150,6 +150,13 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title={pageSEO.contact.title}
+        description={pageSEO.contact.description}
+        keywords={pageSEO.contact.keywords}
+        canonicalUrl="https://nakshtrainterior.com/contact"
+      />
+      
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 bg-gradient-to-b from-[#E7D49E]/20 to-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
