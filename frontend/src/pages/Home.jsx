@@ -17,9 +17,11 @@ import {
 import GoogleReviews from '../components/GoogleReviews';
 import InstagramFeed from '../components/InstagramFeed';
 import SEO, { pageSEO } from '../components/SEO';
+import { useConsultation } from '../context/ConsultationContext';
 
 const Home = () => {
   const navigate = useNavigate();
+  const { openConsultationPopup } = useConsultation();
 
   const handleWhatsAppClick = () => {
     const phoneNumber = '918999100590';
@@ -36,6 +38,10 @@ const Home = () => {
 
   const handleProjectClick = (projectId) => {
     navigate(`/portfolio/${projectId}`);
+  };
+
+  const handleBookConsultation = () => {
+    openConsultationPopup('home-button');
   };
 
   const services = [
@@ -431,10 +437,7 @@ const Home = () => {
               <span>Chat on WhatsApp</span>
             </button>
             <button
-              onClick={() => {
-                const formUrl = 'https://forms.google.com/YOUR_FORM_ID_HERE';
-                window.open(formUrl, '_blank');
-              }}
+              onClick={handleBookConsultation}
               className="bg-[#C68D28] hover:bg-[#B07A20] text-white px-8 py-4 rounded-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
             >
               Book Free Consultation
