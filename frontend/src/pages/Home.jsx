@@ -18,19 +18,13 @@ import GoogleReviews from '../components/GoogleReviews';
 import InstagramFeed from '../components/InstagramFeed';
 import SEO, { pageSEO } from '../components/SEO';
 import { useConsultation } from '../context/ConsultationContext';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
 const Home = () => {
   const navigate = useNavigate();
   const { openConsultationPopup } = useConsultation();
-
-  const handleWhatsAppClick = () => {
-    const phoneNumber = '918999100590';
-    const message = encodeURIComponent(
-      "Hi Nakshatra Interiors, I'd like a quote for my home interiors."
-    );
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(whatsappUrl, '_blank');
-  };
+  
+  const whatsappUrl = getWhatsAppUrl("Hi Nakshatra Interiors, I'd like a quote for my home interiors.");
 
   const scrollToPortfolio = () => {
     document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
@@ -202,13 +196,15 @@ const Home = () => {
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <button
-                  onClick={handleWhatsAppClick}
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-[#047C74] hover:bg-[#036860] text-white px-8 py-4 rounded-lg font-medium flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
                 >
                   <MessageCircle className="w-5 h-5" />
                   <span>Chat on WhatsApp</span>
-                </button>
+                </a>
                 <button
                   onClick={scrollToPortfolio}
                   className="border-2 border-[#047C74] text-[#047C74] hover:bg-[#047C74] hover:text-white px-8 py-4 rounded-lg font-medium flex items-center justify-center space-x-2 transition-all duration-200"
@@ -274,13 +270,15 @@ const Home = () => {
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   {service.description}
                 </p>
-                <button
-                  onClick={handleWhatsAppClick}
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-[#047C74] font-medium text-sm flex items-center space-x-1 hover:space-x-2 transition-all duration-200"
                 >
                   <span>Talk to a designer</span>
                   <ArrowRight className="w-4 h-4" />
-                </button>
+                </a>
               </div>
             ))}
           </div>
@@ -429,13 +427,15 @@ const Home = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={handleWhatsAppClick}
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white text-[#047C74] hover:bg-gray-100 px-8 py-4 rounded-lg font-medium flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
             >
               <MessageCircle className="w-5 h-5" />
               <span>Chat on WhatsApp</span>
-            </button>
+            </a>
             <button
               onClick={handleBookConsultation}
               className="bg-[#C68D28] hover:bg-[#B07A20] text-white px-8 py-4 rounded-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"

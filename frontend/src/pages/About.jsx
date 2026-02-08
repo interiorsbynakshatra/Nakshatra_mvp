@@ -1,6 +1,7 @@
 import React from 'react';
 import { Users, Target, Heart, Lightbulb, Handshake, TrendingUp } from 'lucide-react';
 import SEO, { pageSEO } from '../components/SEO';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
 const About = () => {
   const values = [
@@ -236,18 +237,14 @@ const About = () => {
           <p className="text-xl mb-8 text-white/90">
             Experience the Nakshatra difference – where your vision meets our expertise
           </p>
-          <button
-            onClick={() => {
-              const phoneNumber = '918999100590';
-              const message = encodeURIComponent(
-                "Hi Nakshatra Interiors, I'd like to discuss my interior design project."
-              );
-              window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-            }}
+          <a
+            href={getWhatsAppUrl("Hi Nakshatra Interiors, I'd like to discuss my interior design project.")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-white text-[#047C74] hover:bg-gray-100 px-8 py-4 rounded-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 inline-block"
           >
             Get Started Today
-          </button>
+          </a>
         </div>
       </section>
     </div>

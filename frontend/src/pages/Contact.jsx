@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Phone, Mail, Instagram, MapPin, Send, MessageCircle } from 'lucide-react';
 import { toast } from 'sonner';
 import SEO, { pageSEO } from '../components/SEO';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -112,14 +113,7 @@ const Contact = () => {
     }
   };
 
-  const handleWhatsAppClick = () => {
-    const phoneNumber = '918999100590';
-    const message = encodeURIComponent(
-      `Hi Nakshatra Interiors, I'd like to get in touch regarding interior design services.`
-    );
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(whatsappUrl, '_blank');
-  };
+  const whatsappUrl = getWhatsAppUrl("Hi Nakshatra Interiors, I'd like to get in touch regarding interior design services.");
 
   const contactInfo = [
     {
@@ -350,13 +344,15 @@ const Contact = () => {
                 <p className="text-white/90 mb-6 leading-relaxed">
                   Get instant responses! Chat with us on WhatsApp for quick queries, quotes, or to share your floor plans and ideas.
                 </p>
-                <button
-                  onClick={handleWhatsAppClick}
-                  className="bg-white text-[#25D366] hover:bg-gray-100 px-8 py-4 rounded-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center space-x-2"
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white text-[#25D366] hover:bg-gray-100 px-8 py-4 rounded-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center space-x-2 inline-flex"
                 >
                   <MessageCircle className="w-5 h-5" />
                   <span>Chat on WhatsApp</span>
-                </button>
+                </a>
               </div>
 
               {/* Why Contact Us */}

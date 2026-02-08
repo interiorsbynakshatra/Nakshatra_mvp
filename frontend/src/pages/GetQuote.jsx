@@ -1,16 +1,10 @@
 import React from 'react';
 import { MessageCircle, Phone, CheckCircle, Home, Palette, Clock } from 'lucide-react';
 import SEO, { pageSEO } from '../components/SEO';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
 const GetQuote = () => {
-  const handleWhatsAppClick = () => {
-    const phoneNumber = '918999100590';
-    const message = encodeURIComponent(
-      "Hi Nakshatra Interiors, I'd like a quote for my home interiors."
-    );
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(whatsappUrl, '_blank');
-  };
+  const whatsappUrl = getWhatsAppUrl("Hi Nakshatra Interiors, I'd like a quote for my home interiors.");
 
   const pricingRanges = [
     {
@@ -75,13 +69,15 @@ const GetQuote = () => {
             Transparent pricing, detailed 3D designs, and personalized solutions for your dream home. Start your interior design journey today!
           </p>
 
-          <button
-            onClick={handleWhatsAppClick}
-            className="bg-[#25D366] hover:bg-[#20BA5A] text-white px-10 py-5 rounded-lg font-medium text-lg flex items-center justify-center space-x-3 mx-auto shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#25D366] hover:bg-[#20BA5A] text-white px-10 py-5 rounded-lg font-medium text-lg inline-flex items-center justify-center space-x-3 mx-auto shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
           >
             <MessageCircle className="w-6 h-6" />
             <span>Get Quote on WhatsApp</span>
-          </button>
+          </a>
         </div>
       </section>
 
@@ -274,13 +270,15 @@ const GetQuote = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={handleWhatsAppClick}
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#25D366] hover:bg-[#20BA5A] text-white px-8 py-4 rounded-lg font-medium flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
             >
               <MessageCircle className="w-5 h-5" />
               <span>Chat on WhatsApp</span>
-            </button>
+            </a>
             <a
               href="tel:+918999100590"
               className="bg-white text-[#047C74] hover:bg-gray-100 px-8 py-4 rounded-lg font-medium flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"

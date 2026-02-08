@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import SEO, { pageSEO } from '../components/SEO';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -115,18 +116,14 @@ const FAQ = () => {
           <p className="text-xl mb-8 text-white/90">
             Our team is here to help! Get in touch for personalized answers.
           </p>
-          <button
-            onClick={() => {
-              const phoneNumber = '918999100590';
-              const message = encodeURIComponent(
-                "Hi Nakshatra Interiors, I have some questions about your services."
-              );
-              window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-            }}
-            className="bg-white text-[#047C74] hover:bg-gray-100 px-8 py-4 rounded-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+          <a
+            href={getWhatsAppUrl("Hi Nakshatra Interiors, I have some questions about your services.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-[#047C74] hover:bg-gray-100 px-8 py-4 rounded-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 inline-block"
           >
             Chat with Us on WhatsApp
-          </button>
+          </a>
         </div>
       </section>
     </div>

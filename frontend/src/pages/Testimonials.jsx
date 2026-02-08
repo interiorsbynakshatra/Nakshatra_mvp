@@ -1,6 +1,7 @@
 import React from 'react';
 import { Star, Quote, MessageCircle } from 'lucide-react';
 import SEO, { pageSEO } from '../components/SEO';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
 const Testimonials = () => {
   const testimonials = [
@@ -54,14 +55,7 @@ const Testimonials = () => {
     }
   ];
 
-  const handleWhatsAppClick = () => {
-    const phoneNumber = '918999100590';
-    const message = encodeURIComponent(
-      "Hi Nakshatra Interiors, I'd like to discuss my interior design project after seeing your testimonials."
-    );
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(whatsappUrl, '_blank');
-  };
+  const whatsappUrl = getWhatsAppUrl("Hi Nakshatra Interiors, I'd like to discuss my interior design project after seeing your testimonials.");
 
   return (
     <div className="min-h-screen">
@@ -194,13 +188,15 @@ const Testimonials = () => {
             Experience the same quality, care, and creativity that our clients rave about
           </p>
 
-          <button
-            onClick={handleWhatsAppClick}
-            className="bg-white text-[#047C74] hover:bg-gray-100 px-8 py-4 rounded-lg font-medium flex items-center justify-center space-x-2 mx-auto shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-[#047C74] hover:bg-gray-100 px-8 py-4 rounded-lg font-medium inline-flex items-center justify-center space-x-2 mx-auto shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
           >
             <MessageCircle className="w-5 h-5" />
             <span>Start Your Journey Today</span>
-          </button>
+          </a>
         </div>
       </section>
     </div>
