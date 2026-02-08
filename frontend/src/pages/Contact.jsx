@@ -45,15 +45,18 @@ const Contact = () => {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          city: formData.city,
-          message: formData.message,
+          Name: formData.name,
+          Phone: formData.phone,
+          Email: formData.email,
+          City: formData.city,
+          Requirements: formData.message,
+          Source: 'Contact Form - Website',
+          Timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
           _subject: '🏠 New Inquiry - Nakshatra Interiors Website',
           _template: 'table',
           _captcha: false,
-          _autoresponse: `Hello ${formData.name},\n\nThank you for contacting Nakshatra Interiors! We've received your inquiry and will get back to you within 24 hours.\n\nIn the meantime, feel free to:\n- Browse our portfolio: nakshtrainterior.com/portfolio\n- Check our FAQ: nakshtrainterior.com/faq\n- Chat with us: wa.me/918999100590\n\nBest regards,\nNakshatra Interiors Team\n"Adding aesthetics to life"\n📱 +91 8999100590\n📧 interiorsbynakshatra@gmail.com`
+          _cc: '',
+          _autoresponse: `Dear ${formData.name},\n\nThank you for contacting Nakshatra Interiors!\n\nWe have received your inquiry and our team will get back to you within 24 hours with design ideas and cost estimates.\n\nYour Details:\nName: ${formData.name}\nPhone: ${formData.phone}\nCity: ${formData.city}\n\nIn the meantime, feel free to:\n• Browse our portfolio: nakshtrainterior.com/portfolio\n• Use our cost calculator: nakshtrainterior.com/cost-calculator\n• Check our FAQ: nakshtrainterior.com/faq\n• Chat with us: wa.me/918999100590\n\nBest regards,\nNakshatra Interiors Team\n"Adding aesthetics to life"\n\n📱 +91 8999100590 | +91 7709596817\n📧 interiorsbynakshatra@gmail.com\n🌐 nakshtrainterior.com\n📍 Serving PAN Maharashtra`
         })
       });
 

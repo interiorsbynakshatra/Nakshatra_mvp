@@ -48,12 +48,14 @@ const ConsultationPopup = () => {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          source: 'Consultation Popup',
-          timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
-          _subject: '📅 New Consultation Request - Nakshatra Interiors',
+          'Lead Source': 'Consultation Popup - 10 sec',
+          'Request': 'Free Consultation Callback',
+          'Timestamp': new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+          'Status': 'New - Urgent',
+          _subject: '📅 URGENT: New Consultation Request - Nakshatra Interiors',
           _template: 'table',
           _captcha: false,
-          _autoresponse: 'Thank you for requesting a consultation! Our team will contact you within 24 hours to schedule your free design consultation.\n\nBest regards,\nNakshatra Interiors\n"Adding aesthetics to life"'
+          _autoresponse: 'Thank you for requesting a free consultation with Nakshatra Interiors!\n\nOur design team will contact you within 24 hours to schedule your personalized consultation where we will:\n• Understand your requirements\n• Show you our portfolio\n• Discuss design ideas\n• Provide accurate cost estimates\n• Answer all your questions\n\nFor immediate assistance:\n📱 WhatsApp: +91 8999100590\n📧 Email: interiorsbynakshatra@gmail.com\n🌐 Website: nakshtrainterior.com\n\nBest regards,\nNakshatra Interiors Team\n"Adding aesthetics to life"'
         })
       });
 
