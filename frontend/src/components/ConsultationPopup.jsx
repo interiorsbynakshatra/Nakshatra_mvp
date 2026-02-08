@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { X, Calendar, MessageCircle } from 'lucide-react';
 import { toast } from 'sonner';
 import { useConsultation } from '../context/ConsultationContext';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
 const ConsultationPopup = () => {
   const { isPopupVisible, popupSource, closeConsultationPopup, openConsultationPopup } = useConsultation();
@@ -13,6 +14,8 @@ const ConsultationPopup = () => {
     email: '',
     requirement: ''
   });
+
+  const whatsappUrl = getWhatsAppUrl("Hi Nakshatra Interiors, I'd like to book a free consultation for my home interiors.");
 
   // Auto-show popup after 10 seconds (only once per session)
   useEffect(() => {
@@ -45,16 +48,6 @@ const ConsultationPopup = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
-  };
-
-  const handleWhatsAppClick = () => {
-    const phoneNumber = '918999100590';
-    const message = encodeURIComponent(
-      "Hi Nakshatra Interiors, I'd like to book a free consultation for my home interiors."
-    );
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(whatsappUrl, '_blank');
-    handleClose();
   };
 
   const handleFormSubmit = async (e) => {
