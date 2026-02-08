@@ -1,34 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import { X, Calendar, MessageCircle } from 'lucide-react';
 import { toast } from 'sonner';
+import { useConsultation } from '../context/ConsultationContext';
 
 const ConsultationPopup = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [hasBeenShown, setHasBeenShown] = useState(false);
+  const { isPopupVisible, popupSource, closeConsultationPopup, openConsultationPopup } = useConsultation();
+  const [hasAutoShown, setHasAutoShown] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    email: ''
+    email: '',
+    requirement: ''
   });
 
+  // Auto-show popup after 10 seconds (only once per session)
   useEffect(() => {
-    // Check if popup has been shown in this session
     const popupShown = sessionStorage.getItem('consultationPopupShown');
     
-    if (!popupShown) {
+    if (!popupShown && !hasAutoShown) {
       const timer = setTimeout(() => {
-        setIsVisible(true);
-        setHasBeenShown(true);
+        openConsultationPopup('auto');
+        setHasAutoShown(true);
         sessionStorage.setItem('consultationPopupShown', 'true');
-      }, 10000); // Show after 10 seconds
+      }, 10000);
 
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [hasAutoShown, openConsultationPopup]);
 
   const handleClose = () => {
-    setIsVisible(false);
+    closeConsultationPopup();
+    // Reset form when closing
+    setFormData({
+      name: '',
+      phone: '',
+      email: '',
+      requirement: ''
+    });
   };
 
   const handleChange = (e) => {
@@ -51,7 +60,7 @@ const ConsultationPopup = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     
-    // Validate name (should not be numeric, should contain only letters and spaces)
+    // Validate name
     if (!formData.name.trim()) {
       toast.error('Please enter your name');
       return;
@@ -65,12 +74,12 @@ const ConsultationPopup = () => {
       return;
     }
 
-    // Validate phone number (should be exactly 10 digits)
+    // Validate phone number
     if (!formData.phone.trim()) {
       toast.error('Please enter your phone number');
       return;
     }
-    const phoneDigits = formData.phone.replace(/\D/g, ''); // Remove non-digits
+    const phoneDigits = formData.phone.replace(/\D/g, '');
     if (phoneDigits.length !== 10) {
       toast.error('Phone number must be exactly 10 digits');
       return;
@@ -93,7 +102,10 @@ const ConsultationPopup = () => {
     setIsSubmitting(true);
     
     try {
-      // Send to FormSubmit with ALL details
+      const leadSource = popupSource === 'auto' 
+        ? 'Consultation Popup (10 sec auto)' 
+        : 'Book Free Consultation Button';
+
       const response = await fetch('https://formsubmit.co/ajax/interiorsbynakshatra@gmail.com', {
         method: 'POST',
         headers: {
@@ -104,14 +116,15 @@ const ConsultationPopup = () => {
           'Name': formData.name.trim(),
           'Phone': phoneDigits,
           'Email': formData.email.trim().toLowerCase(),
+          'Requirement': formData.requirement.trim() || 'Not specified',
           'Request Type': 'FREE CONSULTATION',
-          'Lead Source': 'Consultation Popup (10 sec)',
+          'Lead Source': leadSource,
           'Timestamp': new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
           'Status': '🔥 HOT LEAD - IMMEDIATE CALLBACK NEEDED',
           _subject: '📅 URGENT: Free Consultation Request - Nakshatra Interiors',
           _template: 'table',
           _captcha: false,
-          _autoresponse: `Dear ${formData.name.trim()},\n\nThank you for requesting a free consultation with Nakshatra Interiors!\n\nOur design team will contact you at ${phoneDigits} within 24 hours to schedule your personalized consultation.\n\nDuring the consultation, we will:\n• Understand your home requirements\n• Show you our completed projects\n• Discuss design ideas and styles\n• Provide accurate cost estimates\n• Answer all your questions\n\nFor immediate assistance:\n📱 WhatsApp: +91 8999100590\n📧 Email: interiorsbynakshatra@gmail.com\n🌐 Website: nakshtrainterior.com\n\nBest regards,\nNakshatra Interiors Team\n"Adding aesthetics to life"`
+          _autoresponse: `Dear ${formData.name.trim()},\n\nThank you for requesting a free consultation with Nakshatra Interiors!\n\nOur design team will contact you at ${phoneDigits} within 24 hours to schedule your personalized consultation.\n\nYour Requirement: ${formData.requirement.trim() || 'Not specified'}\n\nDuring the consultation, we will:\n• Understand your home requirements\n• Show you our completed projects\n• Discuss design ideas and styles\n• Provide accurate cost estimates\n• Answer all your questions\n\nFor immediate assistance:\n📱 WhatsApp: +91 8999100590\n📧 Email: interiorsbynakshatra@gmail.com\n🌐 Website: nakshtrainterior.com\n\nBest regards,\nNakshatra Interiors Team\n"Adding aesthetics to life"`
         })
       });
 
@@ -132,11 +145,11 @@ const ConsultationPopup = () => {
     }
   };
 
-  if (!isVisible) return null;
+  if (!isPopupVisible) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 animate-fadeIn">
-      <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 sm:p-8 relative animate-slideUp">
+      <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 sm:p-8 relative animate-slideUp max-h-[90vh] overflow-y-auto">
         {/* Close Button */}
         <button
           onClick={handleClose}
@@ -201,6 +214,17 @@ const ConsultationPopup = () => {
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#047C74] focus:border-transparent"
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               title="Please enter a valid email address"
+            />
+          </div>
+          <div>
+            <textarea
+              name="requirement"
+              value={formData.requirement}
+              onChange={handleChange}
+              placeholder="Tell us about your requirement (e.g., 2BHK full interior, modular kitchen, etc.)"
+              rows="3"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#047C74] focus:border-transparent resize-none"
+              maxLength="500"
             />
           </div>
 
